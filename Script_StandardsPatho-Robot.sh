@@ -1,4 +1,49 @@
 #! /bin/bash
+cleanup=0
+update=0
+function usage {
+    echo " "
+    echo "usage: $0 [-c ][ -u]"
+    echo " "
+    
+    echo "    -c          cleanup temp files"
+    echo "    -u          initalize/update submodule"
+    echo "    -h -?       print this help"
+    
+
+    echo " "
+    
+    exit
+}
+
+while getopts "cuh?" opt; do
+    case "$opt" in
+        c)
+            cleanup=1
+
+            ;;
+	u)  update=1
+	    ;;
+       
+	?)
+	    usage
+	    ;;
+	h)
+	    usage
+	    ;;
+	
+	
+	    
+	    
+    esac
+done
+
+if  [ $update -eq 1 ]; then
+    git submodule init
+    git submodule update
+fi
+
+
 
 ## Merge Core Ontology
 
@@ -43,7 +88,11 @@ robot template --template Template_StandardsPatho-ValueSpecifications.tsv \
 
 robot merge --input results/StandardsPatho_CategoryLabels.owl \
       --input results/StandardsPatho_ValueSpecifications.owl \
-      --ontology-iri "http://w3id.org/rdfbones/ext/standards-patho/standards-patho.owl" \
       --output results/standards-patho.owl
+
+if  [ $cleanup -eq 1 ]; then
+    rm results/Merged_CoreOntology.owl results/Merged_CategoryLabels.owl results/StandardsPatho_CategoryLabels.owl results/StandardsPatho_ValueSpecifications.owl
+fi
+ 
 
 read -p 'Hit ENTER to exit'
