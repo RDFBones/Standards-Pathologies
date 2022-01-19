@@ -1,0 +1,4 @@
+[submodule "dependencies/RDFBones"]
+	path = dependencies/RDFBones
+	url = https://github.com/RDFBones/RDFBones-O
+	branch = si
