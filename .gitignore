@@ -5,3 +5,7 @@ results*
 # Exclude Emacs temporary files
 
 \#*
+
+# Exclude LibreOffice lock files
+
+.~lock*
