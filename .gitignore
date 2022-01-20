@@ -1,3 +1,7 @@
 # Exclude script output
 
 results*
+
+# Exclude Emacs temporary files
+
+\#*
