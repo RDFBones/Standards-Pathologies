@@ -1,4 +1,4 @@
-#! /bin/bash
+ß#! /bin/bash
 cleanup=0
 update=0
 build=0
@@ -91,10 +91,29 @@ if [ $build -eq 1 ]; then
 	  --ontology-iri "http://w3id.org/rdfbones/ext/standards-patho/standards-patho.owl" \
 	  --output results/StandardsPatho_ValueSpecifications.owl
 
+    ## MEASUREMENT DATA
+
+    ## Merge value specifications into core ontology
+
+    robot merge --input results/Merged_CategoryLabels.owl \
+	  --input results/StandardsPatho_ValueSpecifications.owl \
+	  --output results/Merged_ValueSpecifications.owl
+
+    ## Create measurement data
+
+    robot template --template Template_StandardsPatho-MeasurementData.tsv \
+	  --input results/Merged_ValueSpecifications.owl \
+	  --prefix "rdfbones: http://w3id.org/rdfbones/core#" \
+	  --prefix "obo: http://purl.obolibrary.org/obo/" \
+	  --prefix "standards-patho: http://w3id.org/rdfbones/ext/standards-patho/" \
+	  --ontology-iri "http://w3id.org/rdfbones/ext/standards-patho/standards-patho.owl" \
+	  --output results/StandardsPatho_MeasurementData.owl
+
     ## EXTENSION
 
     robot merge --input results/StandardsPatho_CategoryLabels.owl \
 	  --input results/StandardsPatho_ValueSpecifications.owl \
+	  --input results/StandardsPatho_MeasurementData.owl \
 	  --output results/standards-patho.owl
 
    
@@ -102,5 +121,5 @@ if [ $build -eq 1 ]; then
 fi
 
 if  [ $cleanup -eq 1 ]; then
-	rm results/Merged_CoreOntology.owl results/Merged_CategoryLabels.owl results/StandardsPatho_CategoryLabels.owl results/StandardsPatho_ValueSpecifications.owl
+	rm results/Merged_CoreOntology.owl results/Merged_CategoryLabels.owl results/StandardsPatho_CategoryLabels.owl results/StandardsPatho_ValueSpecifications.owl results/Merged_ValueSpecifications.owl results/StandardsPatho_MeasurementData.owl
 fi
