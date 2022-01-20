@@ -1,4 +1,4 @@
-ß#! /bin/bash
+#! /bin/bash
 cleanup=0
 update=0
 build=0
