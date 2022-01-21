@@ -8,9 +8,9 @@ We are currently only implementing elements from the Standards that are needed f
 
 ## How to build the ontology file
 
-We are using the [ROBOT](https://robot.obolibrary.org/) tool for developing the first version of the ontology extension. The relevant files are in the [robot branch](https://github.com/RDFBones/Standards-Pathologies/tree/robot) of this repository.
+We are using the [ROBOT](https://robot.obolibrary.org/) tool for developing the first version of the ontology extension. The relevant files are in the [robot branch](../../tree/robot) of this repository.
 
-Specifications of ontology elements are in a series of template files in the tab-separated value format (.tsv). From these, the web ontology language (.owl) file is compiled using the script [Script_StandardsPatho-Robot.sh](https://github.com/RDFBones/Standards-Pathologies/blob/robot/Script_StandardsPatho-Robot.sh). To execute, navigate to the directory containing the file and run the scipt as
+Specifications of ontology elements are in a series of template files in the tab-separated value format (.tsv). From these, the web ontology language (.owl) file is compiled using the script [Script_StandardsPatho-Robot.sh](../robot/Script_StandardsPatho-Robot.sh). To execute, navigate to the directory containing the file and run the scipt as
 
 ```./Script_StandardsPatho-Robot.sh -b -c -u```
 
