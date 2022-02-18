@@ -119,7 +119,7 @@ if [ $build -eq 1 ]; then
     robot annotate --input results/standards-patho.owl \
 	  --remove-annotations \
 	  --ontology-iri "http://w3id.org/rdfbones/ext/standards-patho/latest/standards-patho.owl" \
-	  --version-iri "http://w3id.org/rdfbones/ext/standards-patho/v0.1/standards-patho.owl" \
+	  --version-iri "http://w3id.org/rdfbones/ext/standards-patho/v0-1/standards-patho.owl" \
 	  --annotation owl:versionInfo "0.1" \
 	  --language-annotation rdfs:label "Pathological investigations from 'Standards for data collection from human skeletal remains'" en \
 	  --language-annotation rdfs:comment "This ontology extension only works in combination with the RDFBones core ontology." en \
