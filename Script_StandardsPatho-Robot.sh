@@ -116,6 +116,25 @@ if [ $build -eq 1 ]; then
 	  --input results/StandardsPatho_MeasurementData.owl \
 	  --output results/standards-patho.owl
 
+    robot annotate --input results/standards-patho.owl \
+	  --remove-annotations \
+	  --ontology-iri "http://w3id.org/rdfbones/ext/standards-patho/latest/standards-patho.owl" \
+	  --version-iri "http://w3id.org/rdfbones/ext/standards-patho/v0.1/standards-patho.owl" \
+	  --annotation owl:versionInfo "0.1" \
+	  --language-annotation rdfs:label "Pathological investigations from 'Standards for data collection from human skeletal remains'" en \
+	  --language-annotation rdfs:comment "This ontology extension only works in combination with the RDFBones core ontology." en \
+	  --annotation dc:creator "Felix Engel" \
+	  --annotation dc:contributor "Stefan Schlager" \
+	  --annotation dc:contributor "Jane E. Buikstra" \
+	  --annotation dc:contributor "Eleanna Prevedorou" \
+	  --annotation dc:contributor "Leigh Hayes" \
+	  --annotation dc:contributor "Jessica Hotaling" \
+	  --annotation dc:contributor "Hannah Liedl" \
+	  --annotation dc:contributor "Jessica Rothwell" \
+	  --language-annotation dc:description "This RDFBones ontology extension implements chapter 10, 'Paleopathology', from Buikstra, J. E., & Ubelaker, D. H. (Eds.) (1994). Standards for data collection from human skeletal remains. Fayetteville: Arkansas Archaeological Survey." en \
+	  --language-annotation dc:title "Pathological investigations from 'Standards for data collection from human skeletal remains" en \
+	  --output results/standards-patho.owl
+
    
     
 fi
