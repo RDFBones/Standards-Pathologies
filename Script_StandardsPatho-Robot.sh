@@ -60,6 +60,7 @@ if [ $build -eq 1 ]; then
 	  --input ./dependencies/RDFBones/OBI-RDFBonesSubset.owl \
 	  --input ./dependencies/RDFBones/CIDOC-CRM-RDFBonesSubset.owl \
 	  --input ./dependencies/RDFBones/SIO-RDFBonesSubset.owl \
+	  --input ./dependencies/RDFBones/VIVO-RDFBonesSubset.owl \
 	  --output results/Merged_CoreOntology.owl
 
     ## CATEGORY LABELS
