@@ -1,3 +1,3 @@
 ID	Label	Definition	Definition Source	Definition Source	Editor Note	Editor	Type	Parent Class	Value Specification	Target Bone Organ	Disjoint Class
-ID	AL rdfs:label@en	AL IAO:0000115@en	AL IAO:0000119@en	A IAO:0000119	AL IAO:0000116@en	A IAO:0000117	TYPE	SC %	SC %	SC %	DC %
+ID	AL rdfs:label@en	AL IAO:0000115@en	AL IAO:0000119@en	A IAO:0000119	AL IAO:0000116@en	A IAO:0000117	TYPE	SC %	C 'has value specification' exactly 1 %	SC %	DC %
 standards-patho:ActivityOfPathologicalProcess	Activity of pathological process	A measurement datum defining whether a pathological process is active at a certain point in time.	Buikstra, J. E., & Ubelaker, D. H. (Eds.) (1994). Standards for data collection from human skeletal remains. Fayetteville: Arkansas Archaeological Survey. p.121.			Felix Engel	class	obo:OBI_0000938	standards-patho:ActivityOfPathologicalProcessValueSpecification		
